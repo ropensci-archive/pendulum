@@ -1,0 +1,64 @@
+clock
+=====
+
+```{r echo=FALSE}
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE
+)
+```
+
+[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+[![Build Status](https://travis-ci.com/ropenscilabs/clock.svg?branch=master)](https://travis-ci.com/ropenscilabs/clock)
+
+Time with mocking capability via [timefuzz][]
+
+**BEWARE: VERY ALPHA**
+
+Package API:
+
+```{r echo=FALSE, comment=NA, results="asis"}
+cat(paste(" -", paste(sprintf("`%s`", getNamespaceExports("clock")), collapse = "\n - ")))
+```
+
+## Installation
+
+```{r eval=FALSE}
+remotes::install_github("ropenscilabs/clock")
+```
+
+```{r}
+library("clock")
+```
+
+## usage
+
+```{r}
+Clock$new(2009)$time
+Clock$new(2009, 3, 13)$time
+Clock$new(2009, 3, 13, 1, 4, 53)$time
+```
+
+```{r}
+x <- Clock$new()
+x$now()
+x$utc()
+x$now("UTC")
+```
+
+```{r}
+clock_now()
+clock_now("UTC")
+```
+
+
+## Meta
+
+* Please [report any issues or bugs](https://github.com/ropenscilabs/clock/issues).
+* License: MIT
+* Get citation information for `clock` in R doing `citation(package = 'clock')`
+* Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+
+[![rofooter](https://ropensci.org/public_images/github_footer.png)](https://ropensci.org)
+
+[timefuzz]: https://github.com/ropenscilabs/timefuzz
