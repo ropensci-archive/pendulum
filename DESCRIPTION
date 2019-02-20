@@ -1,7 +1,7 @@
 Package: clock
 Title: Time Classes
 Description: Time classes, with hooks for mocking time.
-Version: 0.0.1.9100
+Version: 0.0.1.9300
 Authors@R: c(
     person("Scott", "Chamberlain",
         role = c("aut", "cre"),

@@ -41,7 +41,7 @@ clock <- function(...) {
 #' @export
 #' @param tzone (character) a valid time zone, defaults to your local timezone
 #' @param ... options to initializer
-clock_now <- function(tzone = "", ...) Clock$new(...)$now(tzone)
+clock_now <- function(tzone = "", ...) clock(...)$now(tzone)
 
 # z <- timefuzz::Time
 # z$inherit <- Clock
