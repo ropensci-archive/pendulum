@@ -3,10 +3,11 @@
 \name{clock}
 \alias{clock}
 \title{Clock class}
+\usage{
+clock(...)
+}
 \arguments{
 \item{...}{options to initializer}
-
-\item{tzone}{(character) a valid time zone, defaults to your local timezone}
 }
 \value{
 a \link{POSIXct} object

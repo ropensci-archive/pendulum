@@ -2,9 +2,6 @@
 #' 
 #' @export
 #' @param ... options to initializer
-#' @param tzone (character) a valid time zone, defaults to your local timezone
-#' @format NULL
-#' @usage NULL
 #' @details
 #' **Methods**
 #'   \describe{
@@ -38,6 +35,13 @@ clock <- function(...) {
   }
   Clock$new(...)
 }
+
+#' now 
+#' 
+#' @export
+#' @param tzone (character) a valid time zone, defaults to your local timezone
+#' @param ... options to initializer
+clock_now <- function(tzone = "", ...) Clock$new(...)$now(tzone)
 
 # z <- timefuzz::Time
 # z$inherit <- Clock
@@ -95,10 +99,6 @@ Clock <- R6::R6Class(
     utc_offset = function() format(self$now(), format = "%z")
   )
 )
-
-#' @export
-#' @rdname Clock
-clock_now <- function(tzone = "", ...) Clock$new(...)$now(tzone)
 
 parts_names <- c("year", "month", "day", "hour", "min", "sec", "tz")
 
