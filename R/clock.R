@@ -16,29 +16,47 @@
 #'
 #' @return a [POSIXct] object
 #' @examples
-#' x <- Clock$new()
+#' x <- clock()
 #' x
 #' x$time
 #' x$now()
 #' x$utc()
 #' x$now("UTC")
+#' x$date()
 #' 
-#' Clock$new(2009)$time
-#' Clock$new(2009, 3, 13)$time
-#' Clock$new(2009, 3, 13, 1, 4, 53)$time
+#' clock(2009)$time
+#' clock(2009, 3, 13)$time
+#' clock(2009, 3, 13, 1, 4, 53)$time
 #' 
 #' clock_now()
 #' clock_now("UTC")
+clock <- function(...) {
+  if (are_mocking()) {
+    z <- timefuzz::Time
+    z$inherit <- Clock
+    return(z$new(...))
+  }
+  Clock$new(...)
+}
+
+# z <- timefuzz::Time
+# z$inherit <- Clock
+# fart <- z$new()
+# fart
+# fart$now()
+# fart$now_with_mock_time()
+# fart$now_without_mock_time()
+# R6::R6Class(
+#   "Clock2",
+#   inherit = Clock,
+# )
+
 Clock <- R6::R6Class(
   "Clock",
+  lock_objects = FALSE,
   public = list(
     time_ = NULL,
     initialize = function(...) {
-      if (private$mocking()) {
-        check_for_package("timefuzz")
-        self <- timefuzz::Time$new()
-      }
-
       parts <- list(...)
       if (length(parts) != 0)  {
         len <- 7 - length(parts)
@@ -55,8 +73,19 @@ Clock <- R6::R6Class(
       }
       return(self)
     },
-    now = function(tzone = "") adjust_tz(Sys.time(), tzone),
-    utc = function() self$now("UTC"),
+    now = function(tzone = "") {
+      # if (inherits(self, "Time")) {
+      if (are_mocking()) {
+        return(self$now_with_mock_time())
+      }
+      adjust_tz(Sys.time(), tzone)
+    },
+    date = function() as.Date(self$now()),
+    utc = function() self$now("UTC")
+  ),
+
+  active = list(
+    time = function() self$time_,
     year = function() format(self$now(), format = "%Y"),
     month = function() format(self$now(), format = "%m"),
     day = function() format(self$now(), format = "%d"),
@@ -64,20 +93,6 @@ Clock <- R6::R6Class(
     min = function() format(self$now(), format = "%M"),
     sec = function() format(self$now(), format = "%S"),
     utc_offset = function() format(self$now(), format = "%z")
-  ),
-
-  active = list(
-    time = function() self$time_
-  ),
-
-  private = list(
-    mocking = function() {
-      if (clock_opts$mock) {
-        check_for_package("timefuzz")
-        return(TRUE)
-      }
-      return(FALSE)
-    }
   )
 )
 
@@ -86,3 +101,11 @@ Clock <- R6::R6Class(
 clock_now <- function(tzone = "", ...) Clock$new(...)$now(tzone)
 
 parts_names <- c("year", "month", "day", "hour", "min", "sec", "tz")
+
+are_mocking <- function() {
+  if (clock_opts$mock) {
+    check_for_package("timefuzz")
+    return(TRUE)
+  }
+  return(FALSE)
+}
