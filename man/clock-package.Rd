@@ -3,7 +3,6 @@
 \docType{package}
 \name{clock-package}
 \alias{clock-package}
-\alias{clock}
 \title{Time Classes}
 \description{
 Time Classes
