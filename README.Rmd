@@ -34,13 +34,13 @@ library("clock")
 ## usage
 
 ```{r}
-Clock$new(2009)$time
-Clock$new(2009, 3, 13)$time
-Clock$new(2009, 3, 13, 1, 4, 53)$time
+clock(2009)$time
+clock(2009, 3, 13)$time
+clock(2009, 3, 13, 1, 4, 53)$time
 ```
 
 ```{r}
-x <- Clock$new()
+x <- clock()
 x$now()
 x$utc()
 x$now("UTC")

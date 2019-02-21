@@ -12,7 +12,8 @@ Time with mocking capability via [timefuzz][]
 
 Package API:
 
- - `Clock`
+ - `clock_mock`
+ - `clock`
  - `clock_now`
 
 ## Installation
@@ -31,31 +32,31 @@ library("clock")
 
 
 ```r
-Clock$new(2009)$time
+clock(2009)$time
 #> [1] "2009-01-01 12:00:00 PST"
-Clock$new(2009, 3, 13)$time
+clock(2009, 3, 13)$time
 #> [1] "2009-03-13 12:00:00 PDT"
-Clock$new(2009, 3, 13, 1, 4, 53)$time
+clock(2009, 3, 13, 1, 4, 53)$time
 #> [1] "2009-03-13 01:04:53 PDT"
 ```
 
 
 ```r
-x <- Clock$new()
+x <- clock()
 x$now()
-#> [1] "2019-02-19 14:27:42 PST"
+#> [1] "2019-02-20 22:46:32 PST"
 x$utc()
-#> [1] "2019-02-19 22:27:42 UTC"
+#> [1] "2019-02-21 06:46:32 UTC"
 x$now("UTC")
-#> [1] "2019-02-19 22:27:42 UTC"
+#> [1] "2019-02-21 06:46:32 UTC"
 ```
 
 
 ```r
 clock_now()
-#> [1] "2019-02-19 14:27:42 PST"
+#> [1] "2019-02-20 22:46:32 PST"
 clock_now("UTC")
-#> [1] "2019-02-19 22:27:42 UTC"
+#> [1] "2019-02-21 06:46:32 UTC"
 ```
 
 
