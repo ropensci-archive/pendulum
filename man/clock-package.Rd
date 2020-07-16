@@ -4,9 +4,6 @@
 \name{clock-package}
 \alias{clock-package}
 \title{Time Classes}
-\description{
-Time Classes
-}
 \author{
 Scott Chamberlain \href{mailto:sckott@protonmail.com}{sckott@protonmail.com}
 }
