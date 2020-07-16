@@ -15,11 +15,18 @@
 #'   clock_mock()
 #'
 #'   # do stuff
-#'   x <- clock()
-#'   x$now()
+#'   x <- time_fuzz$new()
+#'   ## set to today + 435 days
+#'   x$freeze(Sys.Date() + 435)
+#' 
+#'   # get time again
+#'   clock_now()
 #' 
 #'   # turn off mocking
 #'   clock_mock(FALSE)
+#' 
+#'   # get time again
+#'   clock_now()
 #' }
 #'
 #' }
