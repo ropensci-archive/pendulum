@@ -44,19 +44,19 @@ clock(2009, 3, 13, 1, 4, 53)$time
 ```r
 x <- clock()
 x$now()
-#> [1] "2019-02-20 22:46:32 PST"
+#> [1] "2020-07-16 09:13:59 PDT"
 x$utc()
-#> [1] "2019-02-21 06:46:32 UTC"
+#> [1] "2020-07-16 16:13:59 UTC"
 x$now("UTC")
-#> [1] "2019-02-21 06:46:32 UTC"
+#> [1] "2020-07-16 16:13:59 UTC"
 ```
 
 
 ```r
 clock_now()
-#> [1] "2019-02-20 22:46:32 PST"
+#> [1] "2020-07-16 09:13:59 PDT"
 clock_now("UTC")
-#> [1] "2019-02-21 06:46:32 UTC"
+#> [1] "2020-07-16 16:13:59 UTC"
 ```
 
 
@@ -65,7 +65,7 @@ clock_now("UTC")
 * Please [report any issues or bugs](https://github.com/ropenscilabs/clock/issues).
 * License: MIT
 * Get citation information for `clock` in R doing `citation(package = 'clock')`
-* Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+* Please note that this package is released with a [Contributor Code of Conduct](https://ropensci.org/code-of-conduct/). By contributing to this project, you agree to abide by its terms.
 
 [![rofooter](https://ropensci.org/public_images/github_footer.png)](https://ropensci.org)
 
