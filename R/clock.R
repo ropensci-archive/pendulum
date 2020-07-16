@@ -43,18 +43,6 @@ clock <- function(...) {
 #' @param ... options to initializer
 clock_now <- function(tzone = "", ...) clock(...)$now(tzone)
 
-# z <- timefuzz::Time
-# z$inherit <- Clock
-# fart <- z$new()
-# fart
-# fart$now()
-# fart$now_with_mock_time()
-# fart$now_without_mock_time()
-# R6::R6Class(
-#   "Clock2",
-#   inherit = Clock,
-# )
-
 Clock <- R6::R6Class(
   "Clock",
   lock_objects = FALSE,
@@ -78,7 +66,6 @@ Clock <- R6::R6Class(
       return(self)
     },
     now = function(tzone = "") {
-      # if (inherits(self, "Time")) {
       if (are_mocking()) {
         return(self$now_with_mock_time())
       }
