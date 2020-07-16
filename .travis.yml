@@ -3,7 +3,7 @@ sudo: false
 cache: packages
 dist: trusty
 
-r_binary_packages:
+r_packages:
 - covr
 
 after_success:
