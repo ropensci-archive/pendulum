@@ -3,8 +3,11 @@
 \docType{package}
 \name{clock-package}
 \alias{clock-package}
-\title{Time Classes}
+\title{clock}
+\description{
+Time Classes
+}
 \author{
-Scott Chamberlain \href{mailto:sckott@protonmail.com}{sckott@protonmail.com}
+Scott Chamberlain
 }
 \keyword{package}
