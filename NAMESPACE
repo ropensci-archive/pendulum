@@ -2,5 +2,7 @@
 
 export(clock)
 export(clock_mock)
-export(clock_now)
+export(now)
+export(sys_date)
+export(sys_time)
 importFrom(R6,R6Class)
