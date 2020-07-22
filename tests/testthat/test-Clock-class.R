@@ -1,5 +1,5 @@
-test_that("clock", {
-  x <- clock(2009, 3, 13, 1, 4, 53)
+test_that("Clock-class", {
+  x <- Clock$new(2009, 3, 13, 1, 4, 53)
   expect_is(x, "Clock")
   
   # vars
