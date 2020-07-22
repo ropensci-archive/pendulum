@@ -33,13 +33,13 @@ if (interactive()) {
   x$freeze(Sys.Date() + 435)
 
   # get time again
-  clock_now()
+  now()
 
   # turn off mocking
   clock_mock(FALSE)
 
   # get time again
-  clock_now()
+  now()
 }
 
 }
