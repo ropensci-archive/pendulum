@@ -23,6 +23,10 @@ Package API:
 cat(paste(" -", paste(sprintf("`%s`", getNamespaceExports("clock")), collapse = "\n - ")))
 ```
 
+- `clock()` is designed for setting a specific time
+- `now()` is designed for getting the current time AND is mockable
+- `sys_time()` and `sys_date()` are drop in replacements for `Sys.time()` and `Sys.Date()` AND are mockable
+
 ## Installation
 
 ```{r eval=FALSE}
@@ -42,23 +46,20 @@ clock(2009, 3, 13, 1, 4, 53)$time
 ```
 
 ```{r}
-x <- clock()
-x$now()
-x$utc()
-x$now("UTC")
+x <- clock(2009, 3, 13)
+x$utc
+x$date
 ```
 
 ```{r}
-clock_now()
-clock_now("UTC")
+now()$now()
+now("UTC")$now()
 ```
 
 ## use in a function
 
 ```{r}
-todays_date <- function() {
-  clock::clock_now()
-}
+todays_date <- function() sys_time()
 todays_date()
 ```
 
@@ -78,6 +79,10 @@ todays_date()
 
 ```{r}
 x$unfreeze()
+todays_date()
+Sys.sleep(1)
+todays_date()
+Sys.sleep(1)
 todays_date()
 ```
 

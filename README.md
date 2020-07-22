@@ -14,9 +14,11 @@ Time classes for R, w/ time mocking capability via [timefuzz][]
 
 Package API:
 
+ - `sys_date`
+ - `now`
  - `clock_mock`
  - `clock`
- - `clock_now`
+ - `sys_time`
 
 ## Installation
 
@@ -44,32 +46,28 @@ clock(2009, 3, 13, 1, 4, 53)$time
 
 
 ```r
-x <- clock()
-x$now()
-#> [1] "2020-07-16 16:34:18 PDT"
-x$utc()
-#> [1] "2020-07-16 23:34:18 UTC"
-x$now("UTC")
-#> [1] "2020-07-16 23:34:18 UTC"
+x <- clock(2009, 3, 13)
+x$utc
+#> [1] "2009-03-13 19:00:00 UTC"
+x$date
+#> [1] "2009-03-13"
 ```
 
 
 ```r
-clock_now()
-#> [1] "2020-07-16 16:34:18 PDT"
-clock_now("UTC")
-#> [1] "2020-07-16 23:34:18 UTC"
+now()$now()
+#> [1] "2020-07-21 17:14:03 PDT"
+now("UTC")$now()
+#> [1] "2020-07-22 00:14:03 UTC"
 ```
 
 ## use in a function
 
 
 ```r
-todays_date <- function() {
-  clock::clock_now()
-}
+todays_date <- function() sys_time()
 todays_date()
-#> [1] "2020-07-16 16:34:18 PDT"
+#> [1] "2020-07-21 17:14:03 PDT"
 ```
 
 now let's mock time
@@ -81,10 +79,10 @@ x <- time_fuzz$new()
 ## set to today + 5 days
 x$freeze(Sys.Date() + 5)
 todays_date()
-#> [1] "2020-07-20 17:00:00 PDT"
+#> [1] "2020-07-25 17:00:00 PDT"
 # if you run it again, you get the same EXACT time
 todays_date()
-#> [1] "2020-07-20 17:00:00 PDT"
+#> [1] "2020-07-25 17:00:00 PDT"
 ```
 
 "unfreeze" and you're back to real time
@@ -93,7 +91,13 @@ todays_date()
 ```r
 x$unfreeze()
 todays_date()
-#> [1] "2020-07-16 16:34:19 PDT"
+#> [1] "2020-07-21 17:14:03 PDT"
+Sys.sleep(1)
+todays_date()
+#> [1] "2020-07-21 17:14:04 PDT"
+Sys.sleep(1)
+todays_date()
+#> [1] "2020-07-21 17:14:05 PDT"
 ```
 
 
