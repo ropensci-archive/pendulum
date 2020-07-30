@@ -1,7 +1,7 @@
 Package: clock
 Title: Time Classes
 Description: Time classes, with hooks for mocking time.
-Version: 0.0.1.94
+Version: 0.0.2.94
 Authors@R: c(
     person("Scott", "Chamberlain",
         role = c("aut", "cre"),
@@ -16,6 +16,9 @@ Imports:
     R6
 Suggests:
     testthat,
-    timefuzz
+    timefuzz,
+    knitr,
+    rmarkdown
 Remotes: ropenscilabs/timefuzz
 RoxygenNote: 7.1.1
+VignetteBuilder: knitr
