@@ -91,4 +91,4 @@ Sys.sleep(1)
 todays_date()
 ```
 
-[timefuzz]: https://github.com/ropenscilabs/timefuzz
+[timefuzz]: https://github.com/ropensci/timefuzz

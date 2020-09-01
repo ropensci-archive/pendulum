@@ -8,8 +8,8 @@ Authors@R: c(
         email = "myrmecocystus@gmail.com",
         comment = c(ORCID = "orcid.org/0000-0003-1444-9135")))
 License: MIT + file LICENSE
-URL: https://github.com/ropenscilabs/clock
-BugReports: http://github.com/ropenscilabs/clock/issues
+URL: https://github.com/ropensci/clock
+BugReports: http://github.com/ropensci/clock/issues
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE, r6 = FALSE)
 Imports:
@@ -19,6 +19,6 @@ Suggests:
     timefuzz,
     knitr,
     rmarkdown
-Remotes: ropenscilabs/timefuzz
+Remotes: ropensci/timefuzz
 RoxygenNote: 7.1.1
 VignetteBuilder: knitr
