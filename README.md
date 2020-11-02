@@ -2,8 +2,9 @@ clock
 =====
 
 
+
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-[![Build Status](https://travis-ci.com/ropensci/clock.svg?branch=master)](https://travis-ci.com/ropensci/clock)
+[![R-check](https://github.com/ropensci/clock/workflows/R-check/badge.svg)](https://github.com/ropensci/clock/actions?query=workflow%3AR-check)
 
 Time classes for R, w/ time mocking capability via [timefuzz][]
 
