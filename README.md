@@ -35,7 +35,5 @@ library(clock)
 * Get citation information for `clock` in R doing `citation(package = 'clock')`
 * Please note that this package is released with a [Contributor Code of Conduct](https://ropensci.org/code-of-conduct/). By contributing to this project, you agree to abide by its terms.
 
-[![rofooter](https://ropensci.org/public_images/github_footer.png)](https://ropensci.org)
-
 [timefuzz]: https://github.com/ropensci/timefuzz
 [monkey]: https://en.wikipedia.org/wiki/Monkey_patch
