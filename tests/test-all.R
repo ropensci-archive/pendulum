@@ -1,2 +1,2 @@
 library("testthat")
-test_check("clock")
+test_check("pendulum")

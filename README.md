@@ -1,10 +1,10 @@
-clock
+pendulum
 =====
 
 
 
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-[![R-check](https://github.com/ropensci/clock/workflows/R-check/badge.svg)](https://github.com/ropensci/clock/actions?query=workflow%3AR-check)
+[![R-check](https://github.com/ropensci/pendulum/workflows/R-check/badge.svg)](https://github.com/ropensci/pendulum/actions?query=workflow%3AR-check)
 
 Time classes for R, w/ time mocking capability via [timefuzz][]
 
@@ -14,25 +14,25 @@ Time classes for R, w/ time mocking capability via [timefuzz][]
 - `now()` is designed for getting the current time AND is mockable
 - `sys_time()` and `sys_date()` are drop in replacements for `Sys.time()` and `Sys.Date()` AND are mockable
 
-See the docs to get started: https://docs.ropensci.org/clock
+See the docs to get started: https://docs.ropensci.org/pendulum/
 
 ## Installation
 
 
 ```r
-remotes::install_github("ropensci/clock")
+remotes::install_github("ropensci/pendulum")
 ```
 
 
 ```r
-library(clock)
+library(pendulum)
 ```
 
 ## Meta
 
-* Please [report any issues or bugs](https://github.com/ropensci/clock/issues).
+* Please [report any issues or bugs](https://github.com/ropensci/pendulum/issues).
 * License: MIT
-* Get citation information for `clock` in R doing `citation(package = 'clock')`
+* Get citation information for `pendulum` in R doing `citation(package = 'pendulum')`
 * Please note that this package is released with a [Contributor Code of Conduct](https://ropensci.org/code-of-conduct/). By contributing to this project, you agree to abide by its terms.
 
 [timefuzz]: https://github.com/ropensci/timefuzz

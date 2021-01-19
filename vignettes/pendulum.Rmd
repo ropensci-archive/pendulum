@@ -1,10 +1,10 @@
 ---
-title: "clock"
+title: "pendulum"
 author: "Scott Chamberlain"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{clock}
+  %\VignetteIndexEntry{pendulum}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 Time classes for R, w/ time mocking capability via [timefuzz][]
 
 ```{r setup}
-library(clock)
+library(pendulum)
 ```
 
 ## clock
